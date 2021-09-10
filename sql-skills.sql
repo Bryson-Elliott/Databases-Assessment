@@ -38,6 +38,12 @@ where reports_to = 2;
 select count(*) from employee
 where city = 'Lethbridge';
 
+-- Extra Credit
+select * from employee
+order by birth_date desc limit 1;
+
+select * from employee
+order by birth_date limit 1;
 
 --Invoice Section
 select count(*) from invoice
@@ -55,6 +61,11 @@ where total <= 5;
 
 select sum(total) from invoice;
 
+--Extra Credit
+ select count (*) from invoice
+where billing_state in ('CA', 'TX', 'AZ');
+
+select avg(total) from invoice;
 
 --Join section
 select *
@@ -73,4 +84,11 @@ join employee e on c.support_rep_id = e.employee_id;
 select alb.title, art.name
 from album alb
 join artist art on alb.artist_id = art.artist_id;
+
+--Extra Credit
+select pt.track_id
+from playlist_track pt
+join playlist p on p.playlist_id = pt.playlist_id
+where p.name = 'Music';
+
 
